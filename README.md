@@ -3,9 +3,7 @@
 Code accompanying the manuscript on cortical cell-type distributions, nested organizational axes, and functional gradient embedding.
 
 ## Overview
-
-This repository contains preprocessing and analysis scripts used to generate the main and supplementary results in our study. The code is organized into two major parts: preprocessing and analysis. Analysis scripts are further grouped into global, DMN, visual, and M1 modules following the structure of the manuscript.
-
+This repository contains preprocessing and analysis scripts used to generate the main and supplementary results in our study. The code is organized into two major parts: preprocessing and analysis. Analysis scripts are further grouped into global, DMN, visual, and M1 modules following the structure of the manuscript. The repository already includes the full code for the major analytical steps and will be further updated and refined as the project continues to develop.
 ## Repository structure
 
 ```text
@@ -20,7 +18,7 @@ fine-grained-cellular-atlas-cortex/
 │   ├── visual_pc.py
 │   ├── visual_vtc.py
 │   ├── m1_region_effector.py
-│   ├──m1_scan.py
+│   ├── m1_scan.py
 │   └── celltype_in_fc_gradient.py
 ├── materials/
 └── results/
