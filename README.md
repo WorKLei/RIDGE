@@ -4,8 +4,11 @@ Code accompanying the manuscript on cortical cell-type maps, analysis in nested 
 
 ## Overview
 This repository contains preprocessing and analysis scripts used to generate the main and supplementary results in our study.
+
 The code is organized into two major parts: preprocessing and analysis. Analysis scripts are further grouped into global, DMN, visual, and M1 modules following the structure of the manuscript.
+
 The processed cell-type maps used throughout the analyses are available in results/celltype_map.
+
 The repository already includes the full code for the major analytical steps and will be further updated and refined as the project continues to develop.
 
 ## Repository structure
