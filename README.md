@@ -1,13 +1,13 @@
 # A Fine-Grained Cellular Atlas Maps Nested Organizational Axes of Human Cortex
 
-Code accompanying the manuscript on cortical cell-type maps, analysis in nested organizational axes, and functional gradient embedding.
+Code accompanying the manuscript on cortical cell-type maps, analysis across nested organizational axes, and functional gradient embedding.
 
 ## Overview
 This repository contains preprocessing and analysis scripts used to generate the main and supplementary results in our study.
 
 The code is organized into two major parts: preprocessing and analysis. Analysis scripts are further grouped into global, DMN, visual, and M1 modules following the structure of the manuscript.
 
-The processed cell-type maps used throughout the analyses are available in results/celltype_map.
+The processed cell-type maps used throughout the analyses are available in `results/celltype_map`. Parcellated versions of these maps are also provided in `results/parcellated_Cammoun033_no_corpuscallosum` and `results/parcellated_Schaefer400`.
 
 The repository already includes the full code for the major analytical steps and will be further updated and refined as the project continues to develop.
 
@@ -15,7 +15,7 @@ The repository already includes the full code for the major analytical steps and
 
 ```text
 fine-grained-cellular-atlas-cortex/
-├── preprocessing/(currently being organized and refined)
+├── preprocessing/  (currently being organized and refined)
 ├── analysis/
 │   ├── global_celltype_correlation.py
 │   ├── global_celltype_pls_receptors.py
@@ -29,4 +29,6 @@ fine-grained-cellular-atlas-cortex/
 │   └── celltype_in_fc_gradient.py
 ├── materials/
 └── results/
-  └── celltype_map
+    ├── celltype_map/
+    ├── parcellated_Cammoun033_no_corpuscallosum/
+    └── parcellated_Schaefer400/
