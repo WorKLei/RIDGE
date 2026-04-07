@@ -1,6 +1,6 @@
 # A Fine-Grained Cellular Atlas Maps Nested Organizational Axes of Human Cortex
 
-Code accompanying the manuscript on cortical cell-type maps, analysis across nested organizational axes, and functional gradient embedding.
+Code accompanying the manuscript on cortical cell-type maps, analysis across nested organizational axes.
 
 ## Overview
 This repository contains preprocessing and analysis scripts used to generate the main and supplementary results in our study.
