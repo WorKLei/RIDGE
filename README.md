@@ -22,10 +22,10 @@ fine-grained-cellular-atlas-cortex/
 │   ├── global_disease_exposure.py
 │   ├── dmn_cyto.py
 │   ├── dmn_enav.py
-│   ├── visual_pc.py
-│   ├── visual_vtc.py
 │   ├── m1_region_effector.py
 │   ├── m1_scan.py
+│   ├── visual_pc.py
+│   ├── visual_vtc.py
 │   └── celltype_in_fc_gradient.py
 ├── materials/
 └── results/
