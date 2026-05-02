@@ -53,7 +53,7 @@ fine-grained-cellular-atlas-cortex/
     └── parcellated_Schaefer400/
     └── parcellated_GLasser360/
 ```
-## code for the paper
+## Code for the paper
 The repository is organized into two major code folders: `preprocessing/` and `analysis/`.
 
 ### Preprocessing scripts  from overview (A)
