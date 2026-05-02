@@ -66,16 +66,16 @@ The deconvolution framework uses two types of input data.
 
 **Single-nucleus RNA-seq reference data**
 
-- Jorstad et al. DOI: `10.1126/science.adf6812`
-- Siletti et al. DOI: `10.1126/science.add7046`
+- [Jorstad et al.](https://doi.org/10.1126/science.adf6812)
+- [Siletti et al.](https://doi.org/10.1126/science.add7046)
 
 Processed single-nucleus RNA-seq data can be accessed from CELLxGENE:  
 `https://cellxgene.cziscience.com`
 
 **Spatially aligned gene-expression reference profiles**
 
-- MAGICC gene-expression maps: `https://github.com/kwagstyl/MAGICC`
-- Ecker et al. gene-expression maps: `https://gin.g-node.org/sphache/DecodeGABAData`
+- [MAGICC gene-expression maps](https://github.com/kwagstyl/MAGICC)
+- [Ecker et al. gene-expression maps](https://gin.g-node.org/sphache/DecodeGABAData)
 
 Other spatially aligned cortical gene-expression maps, such as maps generated using alternative AHBA preprocessing pipelines, can also be used after matching gene names, cortical space, and regional or parcellation definitions.
 
