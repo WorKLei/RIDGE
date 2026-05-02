@@ -136,7 +136,7 @@ os.makedirs(FIGURE_DIR, exist_ok=True)
 fetch_fslr(density="32k")
 
 lh_parc_atlas = nib.load(f"{ATLAS_DIR}{PARC}_conte69_lh.label.gii")
-lh_spins = np.load(f"{BASE_PATH}materials/lh_spins_{N_PERM}.npy")
+lh_spins = np.load(f"{BASE_PATH}materials/lh_spins_PLS_{N_PERM}.npy")
 
 path_parc = os.path.join(BASE_PATH, f"results/parcellated_{PARC}/")
 with open(f"{path_parc}lh_layer_EX_index.pkl", "rb") as f:
@@ -177,7 +177,7 @@ else:
         Y_df,
         n_perm=N_PERM,
         n_boot=N_BOOT,
-        permsamples=lh_spins,
+        permsamples=lh_s,
     )
     with open(pls_pkl_path, "wb") as f:
         pickle.dump(pls_result, f)
@@ -189,7 +189,7 @@ else:
 singvals = pls_result["singvals"]
 cv = singvals ** 2 / np.sum(singvals ** 2)
 null_singvals = pls_result["permres"]["permsamples"]
-cv_spins = null_singvals ** 2 / np.sum(null_singvals ** 2, axis=0)
+cv_s = null_singvals ** 2 / np.sum(null_singvals ** 2, axis=0)
 
 nlv = len(singvals)
 palette_dist = PALETTE_CV + ["#d5cabd"] * (cv_spins.shape[0] - 1)
