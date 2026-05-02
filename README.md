@@ -15,7 +15,15 @@ The repository already includes the full code for the major analytical steps and
 
 ```text
 fine-grained-cellular-atlas-cortex/
-├── preprocessing/  (currently being organized and refined)
+├── preprocessing/
+│   ├── P00_filtering_downstream analysis.R
+│   ├── P01_celllabel_reannotation.R
+│   ├── P02_rds_to_h5ad.R
+│   ├── P03_1_integrate_data.py
+│   ├── P03_2_DEG_acrossroi.py
+│   ├── P04_roi_h5ad_to_roi_rds.R
+│   ├── P05_roi_rds_for_deconvolution.R
+│   ├── P06_integrate_roi_deconvolution.R
 ├── analysis/
 │   ├── global_celltype_correlation.py
 │   ├── global_celltype_pls_receptors.py
@@ -32,3 +40,4 @@ fine-grained-cellular-atlas-cortex/
     ├── celltype_map/
     ├── parcellated_Cammoun033_no_corpuscallosum/
     └── parcellated_Schaefer400/
+    └── parcellated_GLasser360/    
