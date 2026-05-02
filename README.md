@@ -3,6 +3,10 @@
 Code accompanying the manuscript on cortical cell-type maps, analysis across nested organizational axes.
 
 ## Overview
+<p align="center">
+  <img src="assets/overview.png" alt="Overview of the analysis workflow" width="900">
+</p>
+
 This repository contains preprocessing and analysis scripts used to generate the main and supplementary results in our study.
 
 The code is organized into two major parts: preprocessing and analysis. Analysis scripts are further grouped into global, DMN, visual, and M1 modules following the structure of the manuscript.
@@ -40,4 +44,9 @@ fine-grained-cellular-atlas-cortex/
     ├── celltype_map/
     ├── parcellated_Cammoun033_no_corpuscallosum/
     └── parcellated_Schaefer400/
-    └── parcellated_GLasser360/    
+    └── parcellated_GLasser360/
+
+## code for the paper
+
+
+
