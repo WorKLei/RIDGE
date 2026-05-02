@@ -33,7 +33,7 @@ fine-grained-cellular-atlas-cortex/
 │   ├── P03_2_DEG_acrossroi.py
 │   ├── P04_roi_h5ad_to_roi_rds.R
 │   ├── P05_roi_rds_for_deconvolution.R
-│   ├── P06_integrate_roi_deconvolution.R
+│   ├── P06_integrate_roi_deconvolution.py
 ├── analysis/
 │   ├── global_celltype_correlation.py
 │   ├── global_pr_ai_index_align.py
