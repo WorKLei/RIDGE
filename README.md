@@ -102,7 +102,7 @@ Other spatially aligned cortical gene-expression maps, such as maps generated us
 - **`preprocessing/P05_roi_rds_for_deconvolution.R`**  
   Prepares region-specific single-nucleus reference matrices for deconvolution by organizing cell-type-specific expression profiles.
 
-- **`preprocessing/P06_integrate_roi_deconvolution.R`**  
+- **`preprocessing/P06_integrate_roi_deconvolution.py`**  
   Integrates region-wise deconvolution results into unified cortex-wide cell-type maps for downstream analyses.
 
 ### Analysis scripts from overview (B–D)
