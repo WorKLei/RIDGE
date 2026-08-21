@@ -1,19 +1,19 @@
-# A Fine-Grained Cellular Atlas Maps Nested Organizational Axes of Human Cortex
+# RIDGE: Regional-reference Guided Deconvolution for Cortex-wide Estimation
 
-Code accompanying the manuscript on cortical cell-type maps, analysis across nested organizational axes.
+Code accompanying our study of cortex-wide cell-type mapping and multiscale cortical cellular organization.
 
 ## Overview
 <p align="center">
   <img src="assets/overview.png" alt="Overview of the analysis workflow" width="900">
 </p>
 
-This repository provides preprocessing and analysis scripts that support reproduction of the main results and selected supplementary results in our study.
+This repository provides preprocessing and analysis scripts supporting reproduction of the main and selected supplementary analyses in our study.
 
 The code is organized into two major parts: `preprocessing/` and `analysis/`. 
 
-`Preprocessing/` scripts cover single-nucleus reference preparation, region-specific deconvolution input construction, and integration of region-wise outputs into cortex-wide cell-type maps. 
+`preprocessing/` scripts cover single-nucleus reference preparation, region-specific deconvolution input construction, and integration of region-wise outputs into cortex-wide cell-type maps. 
 
-`Analysis/` scripts are further grouped into global, DMN, M1, and visual modules following the structure of the manuscript.
+`analysis/` scripts are organized into global, DMN, M1, and visual modules following the multiscale structure of the manuscript.
 
 The processed cell-type maps used throughout the analyses are available in `results/celltype_map`. Parcellated versions of these maps are also provided in `results/parcellated_Cammoun033_no_corpuscallosum`,`results/parcellated_Schaefer400`and `results/parcellated_Glasser360`.
 
@@ -24,7 +24,7 @@ The repository already includes the full code for the major analytical steps and
 ## Repository structure
 
 ```text
-fine-grained-cellular-atlas-cortex/
+RIDGE/
 ├── preprocessing/
 │   ├── P00_filtering_downstream analysis.R
 │   ├── P01_celllabel_reannotation.R
@@ -44,14 +44,13 @@ fine-grained-cellular-atlas-cortex/
 │   ├── m1_region_effector.py
 │   ├── m1_scan.py
 │   ├── visual_pc.py
-│   ├── visual_vtc.py
-│   └── celltype_in_fc_gradient.py
+│   └── visual_vtc.py
 ├── materials/    
 └── results/
     ├── celltype_map/
     ├── parcellated_Cammoun033_no_corpuscallosum/
-    └── parcellated_Schaefer400/
-    └── parcellated_GLasser360/
+    ├── parcellated_Schaefer400/
+    └── parcellated_Glasser360/
 ```
 ## Code for the paper
 The repository is organized into two major code folders: `preprocessing/` and `analysis/`.
@@ -81,7 +80,7 @@ Other spatially aligned cortical gene-expression maps, such as maps generated us
 
 #### Scripts
 
-- **`preprocessing/P00_filtering_downstream analysis.R`**  
+- **`preprocessing/P00_filtering_downstream_analysis.R`**  
   Performs initial filtering of single-nucleus RNA-seq data before downstream annotation, integration, and deconvolution reference construction.
 
 - **`preprocessing/P01_celllabel_reannotation.R`**  
@@ -127,9 +126,6 @@ The `dmn`, `m1`, and `visual` modules then extend this framework to system-level
 - **`analysis/global_disease_exposure.py`**  
   Evaluates associations between cell-type maps and spatial patterns of disease-related cortical vulnerability or exposure.
 
-- **`analysis/celltype_in_fc_gradient.py`**  
-  Projects cell-type maps into functional gradient space to examine how different cell classes are positioned along large-scale cortical functional axes.
-
 #### DMN analyses from overview (B)  
 These analyses were conceptually informed by recent work characterizing the default mode network through cytoarchitecture, wiring, and signal flow, particularly Paquola et al. (2025).
 
@@ -160,7 +156,7 @@ These analyses were informed by recent work linking visual cortical organization
 
 
 ### Key conceptual references for analyses
-
+- Huang, Z. et al. (2026). An opposing molecular gradient axis underlies primate cortical organization. Science 392, eaea2673. https://doi.org/10.1126/science.aea2673.
 - Paquola, C. et al. (2025). The architecture of the human default mode network explored through cytoarchitecture, wiring and signal flow. *Nature Neuroscience*. https://doi.org/10.1038/s41593-024-01868-0
 - Gordon, E. M. et al. (2023). A somato-cognitive action network alternates with effector regions in motor cortex. *Nature*, 617, 351–359. https://doi.org/10.1038/s41586-023-05964-2
 - Kubota, E. et al. (2025). White matter connections of human ventral temporal cortex are organized by cytoarchitecture, eccentricity and category-selectivity from birth. *Nature Human Behaviour*. https://doi.org/10.1038/s41562-025-02116-6
