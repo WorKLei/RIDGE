@@ -11,9 +11,9 @@ This repository provides preprocessing and analysis scripts supporting reproduct
 
 The code is organized into two major parts: `preprocessing/` and `analysis/`. 
 
-`preprocessing/` scripts cover single-nucleus reference preparation, region-specific deconvolution input construction, and integration of region-wise outputs into cortex-wide cell-type maps. 
+`preprocessing/` scripts implement the core RIDGE workflow, covering single-nucleus reference preparation, region-specific deconvolution input construction, and integration of region-wise outputs into cortex-wide cell-type maps. 
 
-`analysis/` scripts are organized into global, DMN, M1, and visual modules following the multiscale structure of the manuscript.
+`analysis/` scripts use the RIDGE-derived cell-type maps to characterize cortical cellular organization into global, DMN, M1, and visual modules following the multiscale structure of the manuscript.
 
 The processed cell-type maps used throughout the analyses are available in `results/celltype_map`. Parcellated versions of these maps are also provided in `results/parcellated_Cammoun033_no_corpuscallosum`,`results/parcellated_Schaefer400`and `results/parcellated_Glasser360`.
 
@@ -57,7 +57,7 @@ The repository is organized into two major code folders: `preprocessing/` and `a
 
 ### Preprocessing scripts  from overview (A)
 
-The preprocessing scripts provide a basic reference framework for deconvolution, covering single-nucleus reference preparation, region-specific input construction, and output integration. With minor modifications, this framework can be adapted to custom single-nucleus references, spatially aligned gene-expression maps, or alternative deconvolution settings.
+The preprocessing scripts implement the core RIDGE deconvolution workflow, covering single-nucleus reference preparation, regional reference construction, anchoring of regional references to a shared cortex-wide transcriptomic target, region-matched deconvolution, and cortex-wide integration of regional estimates. With minor modifications, RIDGE can be adapted to alternative single-nucleus reference datasets, spatially aligned cortical gene-expression maps, and deconvolution settings.
 
 #### Input data
 
