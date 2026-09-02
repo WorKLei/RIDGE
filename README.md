@@ -1,5 +1,4 @@
-# RIDGE: Regional-reference Guided Deconvolution for Cortex-wide Estimation
-
+# RIDGE: Regional Integration of Deconvolution with Guided Estimation
 Code accompanying our study of cortex-wide cell-type mapping and multiscale cortical cellular organization.
 
 ## Overview
@@ -11,7 +10,7 @@ This repository provides preprocessing and analysis scripts supporting reproduct
 
 The code is organized into two major parts: `preprocessing/` and `analysis/`. 
 
-`preprocessing/` scripts implement the core RIDGE workflow, covering single-nucleus reference preparation, region-specific deconvolution input construction, and integration of region-wise outputs into cortex-wide cell-type maps. 
+`preprocessing/` scripts implement the core RIDGE workflow, including transcriptomic input preparation, regional reference anchoring, region-matched deconvolution, and geometry-guided field reconstruction of regional cell-type estimates into cortex-wide maps.
 
 `analysis/` scripts use the RIDGE-derived cell-type maps to characterize cortical cellular organization into global, DMN, M1, and visual modules following the multiscale structure of the manuscript.
 
@@ -57,7 +56,7 @@ The repository is organized into two major code folders: `preprocessing/` and `a
 
 ### Preprocessing scripts  from overview (A)
 
-The preprocessing scripts implement the core RIDGE deconvolution workflow, covering single-nucleus reference preparation, regional reference construction, anchoring of regional references to a shared cortex-wide transcriptomic target, region-matched deconvolution, and cortex-wide integration of regional estimates. With minor modifications, RIDGE can be adapted to alternative single-nucleus reference datasets, spatially aligned cortical gene-expression maps, and deconvolution settings.
+The preprocessing scripts implement the RIDGE workflow shown in overview (A): transcriptomic input preparation, regional reference anchoring, region-matched deconvolution, and geometry-guided field reconstruction of regional estimates into cortex-wide cell-type maps.
 
 #### Input data
 
@@ -106,19 +105,19 @@ Other spatially aligned cortical gene-expression maps, such as maps generated us
 
 ### Analysis scripts from overview (B–D)
 
-The analysis scripts use the processed cortex-wide cell-type maps to examine how cellular composition is organized along nested axes of the human cortex. The main analytical logic follows the structure of the manuscript and overview figure: global cortex-wide analyses and DMN analyses correspond to overview (B), M1 analyses correspond to overview (C), and visual cortex analyses correspond to overview (D).
+The analysis scripts use the processed cortex-wide cell-type maps to examine how cellular composition is organized across nested spatial scales of the human cortex. The analytical framework follows the multiscale structure of the manuscript and overview figure, progressing from global cortex-wide organization (overview B), to system-level organization within the default mode, motor, and visual systems (overview C), and finally to local cellular organization within specific cortical territories (overview D).
 
-Here, scripts with the prefix `global_` refer to cortex-wide analyses. These analyses evaluate whether the 24 cell-type maps capture broad cortical organizational patterns, including large-scale functional and anatomical axes, receptor-related variation, and disease-related spatial vulnerability.
+Scripts with the prefix `global_` correspond to the global-scale analyses in overview (B). These analyses evaluate cortex-wide cellular organization and its relationships with established cortical features and large-scale organizational axes.
 
-The `dmn`, `m1`, and `visual` modules then extend this framework to system-level and local-scale axes.
+The `dmn`, `m1`, and `visual` modules span the system and local scales shown in overview (C–D). At the system level, these analyses characterize cellular organization within the default mode network, primary motor cortex, and visual cortex. At the local level, they further resolve cellular organization across DMN subregions, M1 inter-effector regions, and ventral temporal cortex, respectively.
 
-#### Global analyses from overview (B)
+#### Global-scale analyses from overview (B)
 
 - **`analysis/global_celltype_correlation.py`**  
   Examines cortex-wide relationships among the 24 cell-type maps and summarizes their large-scale organizational structure.
 
 - **`analysis/global_pr_ai_index_align.py`**  
-  Tests the alignment between cell-type distributions and a canonical cortical Pr-Al axis, providing a global benchmark for the cellular atlas.
+  Tests the alignment between cell-type distributions and the canonical cortical Pr-Al axis, providing a cortex-wide benchmark of cellular organization.
 
 - **`analysis/global_celltype_pls_receptors.py`**  
   Relates cell-type spatial patterns to neurotransmitter receptor density maps using partial least squares analysis.
@@ -126,34 +125,35 @@ The `dmn`, `m1`, and `visual` modules then extend this framework to system-level
 - **`analysis/global_disease_exposure.py`**  
   Evaluates associations between cell-type maps and spatial patterns of disease-related cortical vulnerability or exposure.
 
-#### DMN analyses from overview (B)  
-These analyses were conceptually informed by recent work characterizing the default mode network through cytoarchitecture, wiring, and signal flow, particularly Paquola et al. (2025).
+#### DMN analyses across system and local scales (overview C–D)
+
+These analyses examine cellular organization within the default mode network at the system level and its further differentiation across local DMN subregions and cytoarchitectural types. The analyses were conceptually informed by recent work characterizing the default mode network through cytoarchitecture, wiring, and signal flow, particularly Paquola et al. (2025).
 
 - **`analysis/dmn_cyto.py`**  
-  Analyzes cellular variation within the default mode network and relates DMN cell-type patterns to cytoarchitectural organization.
+  Characterizes cell-type organization within the default mode network and relates cellular patterns to cytoarchitectural differentiation across DMN subregions.
 
 - **`analysis/dmn_enav.py`**  
-  Examines cell-type variation along DMN-related functional or anatomical axes, highlighting system-level heterogeneity within the default mode network.
+  Examines cell-type variation along complementary dimensions of DMN organization, highlighting cellular heterogeneity within the network.
 
-#### M1 analyses from overview (C) 
-These analyses were motivated by recent evidence that primary motor cortex contains inter-effector regions linked to the somato-cognitive action network, as described by Gordon et al. (2023).
+#### M1 analyses across system and local scales (overview C–D)
+
+These analyses examine continuous cellular organization across primary motor cortex and further resolve the cellular organization of local inter-effector regions. The analyses were motivated by recent evidence that primary motor cortex contains inter-effector regions linked to the somato-cognitive action network, as described by Gordon et al. (2023).
 
 - **`analysis/m1_region_effector.py`**  
-  Investigates cell-type organization across primary motor cortex territories and examines cellular variation related to the proximal–distal motor topology.
+  Characterizes continuous cell-type profiles across primary motor cortex and examines their organization along the mouth–hand–foot somatotopic axis.
 
 - **`analysis/m1_scan.py`**  
-  Analyzes cell-type signatures of inter-effector regions in M1 and their relationship to broader motor and control-related organization.
+  Examines the cellular organization of inter-effector regions and their differentiation from neighboring effector territories.
 
-#### Visual cortex analyses from overview (D)  
-These analyses were informed by recent work linking visual cortical organization, ventral temporal cortex architecture, eccentricity, and category-selective organization, including Kubota et al. (2025).
+#### Visual cortex analyses across system and local scales (overview C–D)
 
+These analyses examine cellular organization along large-scale visual processing and eccentricity-related axes and further resolve how these patterns are organized locally within ventral temporal cortex. The analyses were informed by recent work linking visual cortical organization, ventral temporal cortex architecture, eccentricity, and category-selective organization, including Kubota et al. (2025).
 
 - **`analysis/visual_pc.py`**  
-  Examines cellular variation along major axes of visual cortical organization, including visual hierarchy and eccentricity-related structure.
+  Examines major axes of cellular variation across visual cortex and relates them to hierarchical processing and eccentricity-related organization.
 
 - **`analysis/visual_vtc.py`**  
-  Focuses on the ventral temporal cortex and analyzes how cell-type distributions relate to visual processing organization within this region.
-
+  Examines local cellular organization within ventral temporal cortex and its relationship to eccentricity-gradient reversals and category-selective territories.
 
 ### Key conceptual references for analyses
 - Huang, Z. et al. (2026). An opposing molecular gradient axis underlies primate cortical organization. Science 392, eaea2673. https://doi.org/10.1126/science.aea2673.
